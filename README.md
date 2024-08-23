@@ -1,30 +1,75 @@
-# Ex.No: 1B                     CONVERSION OF NON STATIONARY TO STATIONARY DATA
-# Date: 
+### Developed By: Ragavendran A
+### Register No: 212222230114
+### Date:
 
-### AIM:
-To perform regular differncing,seasonal adjustment and log transformatio on international airline passenger data
-### ALGORITHM:
-1. Import the required packages like pandas and numpy
-2. Read the data using the pandas
-3. Perform the data preprocessing if needed and apply regular differncing,seasonal adjustment,log transformation.
-4. Plot the data according to need, before and after regular differncing,seasonal adjustment,log transformation.
-5. Display the overall results.
-### PROGRAM:
+# Ex.No: 1B CONVERSION OF NON STATIONARY TO STATIONARY DATA
 
 
-### OUTPUT:
+## AIM:
+To analyzing the Summer Olympic Medals dataset is to understand and visualize trends in medal counts by country, year, and sport, and to gain insights into patterns and performance over time.
+
+## ALGORITHM:
+```
+1.Data Collection: Load the dataset into a DataFrame.
+2.Data Cleaning: Handle missing values and preprocess data.
+3.Exploratory Data Analysis (EDA): Analyze basic statistics and distributions.
+4.Trend Analysis: Identify trends in medal counts by year and country.
+5.Visualization: Create charts to visualize medal counts and trends.
+6.Insight Generation: Interpret results to derive insights on performance.
+```
+
+## PROGRAM:
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from statsmodels.tsa.seasonal import seasonal_decompose
 
 
-REGULAR DIFFERENCING:
+data = pd.read_csv("/content/Summer_olympic_Medals.csv")
+
+df = pd.DataFrame(data)
 
 
-SEASONAL ADJUSTMENT:
+df['Regular Difference'] = df['Gold'].diff()
 
 
-LOG TRANSFORMATION:
+result = seasonal_decompose(df['Gold'], model='additive', period=12)
+df['Seasonal Adjustment'] = result.resid
+
+df['Log Transformation'] = np.log(df['Gold'])
+
+
+plt.figure(figsize=(14, 10))
+
+plt.subplot(4, 1, 1)
+plt.plot(df['Gold'], label='Original')
+plt.legend(loc='best')
+plt.title('Original Data')
+
+plt.subplot(4, 1, 2)
+plt.plot(df['Regular Difference'], label='Regular Difference')
+plt.legend(loc='best')
+plt.title('Regular Differencing')
+
+plt.subplot(4, 1, 3)
+plt.plot(df['Seasonal Adjustment'], label='Seasonal Adjustment')
+plt.legend(loc='best')
+plt.title('Seasonal Adjustment')
+
+plt.subplot(4, 1, 4)
+plt.plot(df['Log Transformation'], label='Log Transformation')
+plt.legend(loc='best')
+plt.title('Log Transformation')
+
+plt.tight_layout()
+plt.show()
+```
+## OUTPUT:
+![image](https://github.com/user-attachments/assets/1225e089-aa19-4d37-bdad-ddd4d78a55ef)
+![image](https://github.com/user-attachments/assets/88283f98-8762-4c87-ac35-41453a50a676)
 
 
 
-### RESULT:
-Thus we have created the python code for the conversion of non stationary to stationary data on international airline passenger
-data.
+# RESULT:
+Thus we have created the python code for the conversion of non stationary to stationary data on summer olympic medals.
