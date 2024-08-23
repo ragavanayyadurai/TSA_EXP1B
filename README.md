@@ -10,12 +10,12 @@ To analyzing the Summer Olympic Medals dataset is to understand and visualize tr
 
 ## ALGORITHM:
 ```
-1.Data Collection: Load the dataset into a DataFrame.
-2.Data Cleaning: Handle missing values and preprocess data.
-3.Exploratory Data Analysis (EDA): Analyze basic statistics and distributions.
-4.Trend Analysis: Identify trends in medal counts by year and country.
-5.Visualization: Create charts to visualize medal counts and trends.
-6.Insight Generation: Interpret results to derive insights on performance.
+1.Load the dataset into a DataFrame.
+2.Handle missing values and preprocess data.
+3.Analyze basic statistics and distributions.
+4.Identify trends in medal counts by year and country.
+5.Create charts to visualize medal counts and trends.
+6.Interpret results to derive insights on performance.
 ```
 
 ## PROGRAM:
