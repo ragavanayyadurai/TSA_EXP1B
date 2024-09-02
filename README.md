@@ -14,8 +14,9 @@ To analyzing the Summer Olympic Medals dataset is to understand and visualize tr
 2.Handle missing values and preprocess data.
 3.Analyze basic statistics and distributions.
 4.Identify trends in medal counts by year and country.
-5.Create charts to visualize medal counts and trends.
-6.Interpret results to derive insights on performance.
+5.Perform the non-stationary convertion into stationary convertion using above three mothods.
+6.Create charts to visualize medal counts and trends.
+7.Interpret results to derive insights on performance.
 ```
 
 ## PROGRAM:
@@ -72,4 +73,4 @@ plt.show()
 
 
 # RESULT:
-Thus we have created the python code for the conversion of non stationary to stationary data on summer olympic medals.
+Thus the python code for the conversion of non stationary to stationary data on summer olympic medals is successfully executed.
